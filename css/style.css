@@ -2,6 +2,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+    margin-top: 100px
 }
 .chat-button{
     background-color: rgb(56, 173, 56);
@@ -33,6 +34,16 @@
     height: 20px;
     padding: 20px;
     width: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+.cancel-text{
+    font-size: 16px;
+    color: white;
+    font-weight: 100;
+    margin: 0;
+    margin-right: 10px;
+    cursor: pointer;
 }
 .chat-main{
     background-color: rgb(41, 41, 53);
@@ -47,6 +58,7 @@
     margin: 0;
     width: 750px;
     padding: 20px;
+    padding-left: 0px;
     border-bottom: solid rgb(116, 116, 116) .1px;
     display: flex;
     justify-content: space-between;
@@ -103,4 +115,10 @@ img{
 }
 .chat-active{
     display: none;
+}
+.new-message:hover{
+    background-color: gray
+}
+.nm-click{
+    background-color: red
 }

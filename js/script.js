@@ -9,11 +9,13 @@ let chatButton = document.getElementsByClassName('chat-button');
 let sendButton = document.getElementsByClassName('fas-send');
 let chatMain = document.getElementsByClassName('chat-main');
 let input = document.getElementsByClassName('chat-text-input')
+let deleteButton = document.getElementsByClassName('cancel-text')[0]
 sendButton[0].addEventListener('click',function(){
     let newMessage = document.createElement('div');
+    newMessage.classList.add('new-message')
     let nmText  = document.createElement('h3');
     let img = document.createElement('img')
-    img.src = '../asserts/rabbit.jpg'
+    img.src = 'asserts/user.jpg'
     nmText.innerText = input[0].value;
     chatMain[0].appendChild(newMessage)
     newMessage.appendChild(img);
@@ -23,17 +25,23 @@ sendButton[0].addEventListener('click',function(){
     nmText.style.color = 'white'
     nmText.style.margin = '20px'
     nmText.style.fontWeight = '100'
-    newMessage.style.padding = '10px';
-        newMessage.addEventListener('mouseover',function(){
-        newMessage.style.backgroundColor = 'gray'
-        })
-        newMessage.addEventListener('mouseout',function(){
-        newMessage.style.background = 'none'
-        })
+    newMessage.style.padding = '20px';
+    newMessage.style.paddingLeft = '0px';
+    newMessage.addEventListener('click',function(){
+    newMessage.classList.toggle('nm-click')
+    newMessage.classList.toggle('new-message')
+    deleteButton.classList.remove('chat-active');
+})
     newMessage.style.width = '750px';
     newMessage.style.borderBottom = 'solid gray .1px'
     newMessage.style.display = 'flex';
     newMessage.style.flexDirection = 'row-reverse'
+
+deleteButton.addEventListener('click',function(){
+    if(newMessage.classList.contains('nm-click')){
+        chatMain[0].removeChild(newMessage)
+    }
+})
 })
 
 
