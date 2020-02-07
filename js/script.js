@@ -42,6 +42,12 @@ deleteButton.addEventListener('click',function(){
         chatMain[0].removeChild(newMessage)
     }
 })
+    let word = input[0].value
+    if(word[0] == word[0].toUpperCase()){
+    newMessage.style.flexDirection = 'row'
+    img.src = 'asserts/1548257128_image_temp_name1.jpg'
+}
+
 })
 
 
