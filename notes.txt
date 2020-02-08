@@ -1,3 +1,0 @@
-input clear
-bosh olanda yazmasin
-enter click
